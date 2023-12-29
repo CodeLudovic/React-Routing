@@ -9,7 +9,7 @@ import { User } from "../components/User";
 export const MainRouter = () => {
 	return (
 		<>
-			<h1>Cabecera</h1>
+			<h1>Header</h1>
 			<hr />
 
 			<nav>
@@ -18,7 +18,7 @@ export const MainRouter = () => {
 						<NavLink
 							to="/home"
 							className={({ isActive }) => (isActive ? "active" : null)}>
-							Inicio
+							Home
 						</NavLink>
 					</li>
 					<li>
@@ -51,7 +51,7 @@ export const MainRouter = () => {
 			</section>
 
 			<hr />
-			<footer> Este es el pie de pagina </footer>
+			<footer> Footer </footer>
 		</>
 	);
 };
