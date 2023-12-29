@@ -45,6 +45,7 @@ export const MainRouter = () => {
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/articles" element={<Articles />} />
 					<Route path="/user" element={<User />} />
+					<Route path="/user/:name/:last_name" element={<User />} />
 					<Route path="*" element={<Error404 />} />
 				</Routes>
 			</section>
