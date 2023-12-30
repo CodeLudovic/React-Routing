@@ -12,6 +12,11 @@ import { Contact } from "../components/Contact";
 import { Articles } from "../components/Articles";
 import { Error404 } from "../components/Error404";
 import { User } from "../components/User";
+import { PanelControl } from "../components/Panel/PanelControl";
+import { Home as HomePanel } from "../components/Panel/Home";
+import { Create } from "../components/Panel/Create";
+import { Management } from "../components/Panel/Management";
+import { About } from "../components/Panel/About";
 
 export const MainRouter = () => {
 	return (
@@ -42,6 +47,13 @@ export const MainRouter = () => {
 							Articles
 						</NavLink>
 					</li>
+					<li>
+						<NavLink
+							to="/panel"
+							className={({ isActive }) => (isActive ? "active" : null)}>
+							Admin Dashboard
+						</NavLink>
+					</li>
 				</ul>
 			</nav>
 			<hr />
@@ -58,6 +70,12 @@ export const MainRouter = () => {
 						element={<Navigate to="/user/Daniel/Ospina" />}
 					/>
 					<Route path="*" element={<Error404 />} />
+					<Route path="/panel/*" element={<PanelControl />}>
+						<Route path="home" element={<HomePanel />} />
+						<Route path="create-article" element={<Create />} />
+						<Route path="users-management" element={<Management />} />
+						<Route path="about" element={<About />} />
+					</Route>
 				</Routes>
 			</section>
 
