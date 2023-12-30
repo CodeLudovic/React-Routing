@@ -1,5 +1,12 @@
 import React from "react";
-import { Routes, Route, Link, BrowserRouter, NavLink } from "react-router-dom";
+import {
+	Routes,
+	Route,
+	Link,
+	BrowserRouter,
+	NavLink,
+	Navigate,
+} from "react-router-dom";
 import { Home } from "../components/Home";
 import { Contact } from "../components/Contact";
 import { Articles } from "../components/Articles";
@@ -46,6 +53,10 @@ export const MainRouter = () => {
 					<Route path="/articles" element={<Articles />} />
 					<Route path="/user" element={<User />} />
 					<Route path="/user/:name/:last_name" element={<User />} />
+					<Route
+						path="/redirigir"
+						element={<Navigate to="/user/Daniel/Ospina" />}
+					/>
 					<Route path="*" element={<Error404 />} />
 				</Routes>
 			</section>
